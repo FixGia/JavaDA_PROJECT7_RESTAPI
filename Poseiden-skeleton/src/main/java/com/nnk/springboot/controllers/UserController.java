@@ -35,17 +35,17 @@ public class UserController {
     }
 
     @GetMapping("/add")
-    public String addUser(final UserRequest bid) {
+    public String addUser(final UserRequest user, Model model) {
 
 
-        return "user/add";
+        model.addAttribute("user", user);
+        return "/user/add";
     }
 
     @PostMapping("/validate")
-    public String validate(@Valid UserRequest user, BindingResult result, Model model) {
+    public String validate(@Valid @ModelAttribute("user")UserRequest user, BindingResult result, Model model) {
 
         if (!result.hasErrors()) {
-            model.addAttribute("user", user);
             userService.saveUser(user);
             model.addAttribute("users", userService.findAllUser());
             return "redirect:/user/list";
