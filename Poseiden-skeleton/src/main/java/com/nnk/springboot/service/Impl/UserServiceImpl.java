@@ -1,4 +1,4 @@
-package com.nnk.springboot.service;
+package com.nnk.springboot.service.Impl;
 
 
 import com.nnk.springboot.domain.User;
@@ -6,6 +6,7 @@ import com.nnk.springboot.dto.UserRequest;
 import com.nnk.springboot.exception.DataNotFoundException;
 import com.nnk.springboot.exception.NotConformDataException;
 import com.nnk.springboot.repositories.UserRepository;
+import com.nnk.springboot.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ import java.util.Optional;
 
 @Slf4j
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
 
@@ -41,6 +42,7 @@ public class UserServiceImpl implements UserService{
             return null;
         }
     }
+
     @Override
     public List<User> findAllUser() {
         return userRepository.findAll();
@@ -50,7 +52,7 @@ public class UserServiceImpl implements UserService{
     public User getUserById(Integer id) {
 
         Optional<User> getUser = userRepository.findById(id);
-         return getUser.get();
+        return getUser.get();
     }
 
     @Override
@@ -64,10 +66,10 @@ public class UserServiceImpl implements UserService{
             userToUpdate.get().setId(id);
 
             String fullName = user.getFullname();
-            if ( fullName != null ) {
+            if (fullName != null) {
                 userToUpdate.get().setFullName(fullName);
             }
-            String userName  = user.getUsername();
+            String userName = user.getUsername();
             if (userName != null) {
                 userToUpdate.get().setUsername(userName);
             }
@@ -86,5 +88,12 @@ public class UserServiceImpl implements UserService{
     @Override
     public void deleteUserById(Integer id) {
 
+
+        try {
+            userRepository.deleteById(id);
+
+        } catch (DataNotFoundException e) {
+            log.error("User with id {} doesn't found in BD", id);
+        }
     }
 }

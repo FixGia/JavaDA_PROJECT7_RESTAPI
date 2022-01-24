@@ -18,6 +18,7 @@ public class GeneralConstraints {
     /** The Constant VARIABLE_LENGTH_512. */
     public static final int VARIABLE_LENGTH_512 = 512;
 
+
     /** The Constant PATTERN_ALPHANUMERIC. */
     public static final String PATTERN_ALPHANUMERIC = "[-A-Za-z0-9\\s]+${2}";
 

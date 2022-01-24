@@ -1,6 +1,10 @@
 package com.nnk.springboot.controllers;
 
 import com.nnk.springboot.domain.BidList;
+import com.nnk.springboot.dto.BidListRequest;
+import com.nnk.springboot.exception.NotConformDataException;
+import com.nnk.springboot.service.BidService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,43 +17,76 @@ import javax.validation.Valid;
 
 
 @Controller
+@Slf4j
+@RequestMapping("/bidList")
 public class BidListController {
-    // TODO: Inject Bid service
 
-    @RequestMapping("/bidList/list")
+
+    private BidService bidService;
+
+    public BidListController(BidService bidService) {
+        this.bidService = bidService;
+    }
+
+    @RequestMapping("/list")
     public String home(Model model)
     {
-        // TODO: call service find all bids to show to the view
+       model.addAttribute("bidList", bidService.findAllBidList());
         return "bidList/list";
     }
 
-    @GetMapping("/bidList/add")
-    public String addBidForm(BidList bid) {
+    @GetMapping("/add")
+    public String addBidForm(BidListRequest bid, Model model) {
+
+        model.addAttribute("bidList", bid);
         return "bidList/add";
     }
 
-    @PostMapping("/bidList/validate")
-    public String validate(@Valid BidList bid, BindingResult result, Model model) {
-        // TODO: check data valid and save to db, after saving return bid list
+    @PostMapping("/validate")
+    public String validate(@Valid BidListRequest bid, BindingResult result, Model model) {
+
+        if (!result.hasErrors()) {
+            bidService.saveBid(bid);
+            model.addAttribute("bidList", bidService.findAllBidList());
+            log.info("success to add a neww bidList {}", bid);
+            return "redirect:/bidList/list";
+        }
+        log.error("can't add BidList");
         return "bidList/add";
     }
 
-    @GetMapping("/bidList/update/{id}")
+    @GetMapping("/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-        // TODO: get Bid by Id and to model then show to the form
+        BidList bidList = bidService.getBidById(id);
+        model.addAttribute("bidList", bidList);
         return "bidList/update";
     }
 
-    @PostMapping("/bidList/update/{id}")
-    public String updateBid(@PathVariable("id") Integer id, @Valid BidList bidList,
+    @PostMapping("/update/{id}")
+    public String updateBid(@PathVariable("id") Integer id, @Valid BidListRequest bidList,
                              BindingResult result, Model model) {
-        // TODO: check required fields, if valid call service to update Bid and return list Bid
-        return "redirect:/bidList/list";
+       if(result.hasErrors()){
+           return "bidList/update";
+       }
+
+        bidService.updateBidList(bidList, id);
+       model.addAttribute("AllBidList", bidService.findAllBidList());
+       return "redirect:/bidList/list";
     }
 
-    @GetMapping("/bidList/delete/{id}")
+    @GetMapping("/delete/{id}")
     public String deleteBid(@PathVariable("id") Integer id, Model model) {
-        // TODO: Find Bid by Id and delete the bid, return to Bid list
-        return "redirect:/bidList/list";
+
+        try {
+
+            bidService.deleteBidById(id);
+            model.addAttribute("bidList", bidService.findAllBidList());
+            return "redirect:/bidList/list";
+
+        } catch (NotConformDataException e) {
+            log.error("can't delete bidList with id{}", id);
+            model.addAttribute(bidService.findAllBidList());
+            return "redirect:/bidList/list";
+        }
     }
 }

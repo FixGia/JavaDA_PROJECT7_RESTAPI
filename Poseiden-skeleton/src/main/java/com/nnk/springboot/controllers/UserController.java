@@ -2,6 +2,7 @@ package com.nnk.springboot.controllers;
 
 import com.nnk.springboot.domain.User;
 import com.nnk.springboot.dto.UserRequest;
+import com.nnk.springboot.exception.NotConformDataException;
 import com.nnk.springboot.repositories.UserRepository;
 import com.nnk.springboot.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -28,8 +29,7 @@ public class UserController {
 
 
     @RequestMapping("/list")
-    public String home(Model model)
-    {
+    public String home(Model model) {
         model.addAttribute("users", userService.findAllUser());
         return "user/list";
     }
@@ -43,7 +43,7 @@ public class UserController {
     }
 
     @PostMapping("/validate")
-    public String validate(@Valid @ModelAttribute("user")UserRequest user, BindingResult result, Model model) {
+    public String validate(@Valid @ModelAttribute("user") UserRequest user, BindingResult result, Model model) {
 
         if (!result.hasErrors()) {
             userService.saveUser(user);
@@ -56,7 +56,7 @@ public class UserController {
 
     @GetMapping("/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-       User user = userService.getUserById(id);
+        User user = userService.getUserById(id);
         model.addAttribute("user", user);
         return "user/update";
     }
@@ -76,9 +76,15 @@ public class UserController {
 
     @GetMapping("/delete/{id}")
     public String deleteUser(@PathVariable("id") Integer id, Model model) {
-        User user = userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
-        userRepository.delete(user);
-        model.addAttribute("users", userRepository.findAll());
-        return "redirect:/user/list";
+
+        try {
+            userService.deleteUserById(id);
+            model.addAttribute("users", userService.findAllUser());
+            return "redirect:/user/list";
+        } catch (NotConformDataException e) {
+            log.error("can't delete user with id {}", id);
+            model.addAttribute("users", userService.findAllUser());
+            return "redirect:/user/list";
+        }
     }
 }

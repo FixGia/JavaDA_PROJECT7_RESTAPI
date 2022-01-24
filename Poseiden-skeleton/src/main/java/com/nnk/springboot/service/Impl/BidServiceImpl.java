@@ -1,9 +1,11 @@
-package com.nnk.springboot.service;
+package com.nnk.springboot.service.Impl;
 
 import com.nnk.springboot.domain.BidList;
+import com.nnk.springboot.dto.BidListRequest;
 import com.nnk.springboot.exception.DataNotFoundException;
 import com.nnk.springboot.exception.NotConformDataException;
 import com.nnk.springboot.repositories.BidListRepository;
+import com.nnk.springboot.service.BidService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -43,11 +45,14 @@ public class BidServiceImpl implements BidService {
     }
 
     @Override
-    public BidList updateBidList(BidList bidList) {
+    public BidList updateBidList(BidListRequest bidList, Integer id) {
 
-        Optional<BidList> searchBidList = bidListRepository.findById(bidList.getBidListId());
+        Optional<BidList> searchBidList = bidListRepository.findById(id);
 
         if (searchBidList.isPresent()) {
+
+            searchBidList.get().setBidListId(id);
+
             BidList updateBidList = searchBidList.get();
             String account = bidList.getAccount();
             if (account != null) {
@@ -64,30 +69,35 @@ public class BidServiceImpl implements BidService {
             bidListRepository.save(updateBidList);
             return updateBidList;
         }
-        throw new DataNotFoundException("bid with id: " + searchBidList.get().getBidListId() + " wasn't found");
+        throw new DataNotFoundException("bid with id: " + id + " wasn't found");
     }
 
     @Override
     public void deleteBidById(Integer id) {
 
-        Optional<BidList> bidListToFind = bidListRepository.findById(id);
-        if (bidListToFind.isPresent()) {
-            log.info("BidList with id {} was found", id);
-            bidListRepository.delete(bidListToFind.get());
+        try {
+            bidListRepository.deleteById(id);
+
+        } catch (DataNotFoundException e) {
+            log.error("BidList with id {} doesn't found in DB", id);
         }
-        throw new DataNotFoundException("BidList with id : " + id + "wasn't found in DB");
     }
 
-    public BidList saveBid(BidList bidList) {
 
-        if (bidList != null) {
-            bidList.setAccount(bidList.getAccount());
-            bidList.setType(bidList.getType());
-            bidList.setBidQuantity(bidList.getBidQuantity());
-            bidListRepository.save(bidList);
-            return bidList;
-        }
-        throw new NotConformDataException("BidList wasn't valid Data, Bidlist wasn't save in DB");
+    public BidList saveBid(BidListRequest bidList) {
+
+       try {
+           BidList bidListToCreate = new BidList();
+            bidListToCreate.setAccount(bidList.getAccount());
+            bidListToCreate.setType(bidList.getType());
+            bidListToCreate.setBidQuantity(bidList.getBidQuantity());
+            bidListRepository.save(bidListToCreate);
+            return bidListToCreate;
+        } catch (NotConformDataException exception) {
+           exception.printStackTrace();
+           log.error("BidList wasn't valid Data, Bidlist wasn't save in DB");
+           return null;
+       }
     }
 }
 
