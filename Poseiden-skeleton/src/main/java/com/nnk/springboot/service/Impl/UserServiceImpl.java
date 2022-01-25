@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,14 +46,29 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> findAllUser() {
-        return userRepository.findAll();
+
+
+        try {
+            log.info("displayed UserList");
+            return userRepository.findAll();
+        } catch (DataNotFoundException e)
+        {
+            log.error("User List doesn't exist in DB ");
+            return Collections.emptyList();
+        }
     }
 
     @Override
     public User getUserById(Integer id) {
 
-        Optional<User> getUser = userRepository.findById(id);
-        return getUser.get();
+        try {
+            Optional<User> getUser = userRepository.findById(id);
+            log.info("User with id {} was foudn", id);
+            return getUser.get();
+        } catch (DataNotFoundException e) {
+            log.error("User with id{} doesn't exist in DB", id);
+            return null;
+        }
     }
 
     @Override

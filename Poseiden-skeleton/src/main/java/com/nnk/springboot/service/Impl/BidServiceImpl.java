@@ -8,6 +8,8 @@ import com.nnk.springboot.repositories.BidListRepository;
 import com.nnk.springboot.service.BidService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,12 +27,15 @@ public class BidServiceImpl implements BidService {
     @Override
     public List<BidList> findAllBidList() {
 
-        List<BidList> bidLists = bidListRepository.findAll();
-        if (bidLists != null) {
-            log.info(" BidList is displayed ");
-            return bidLists;
+
+        try {
+            log.info("displayed BidLists");
+            return bidListRepository.findAll();
+        } catch (DataNotFoundException e)
+        {
+            log.error("BidList doesn't exist in DB ");
+            return Collections.emptyList();
         }
-        throw new DataNotFoundException("BidList wasn't found in DB");
     }
 
     @Override

@@ -4,7 +4,6 @@ import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.dto.BidListRequest;
 import com.nnk.springboot.exception.NotConformDataException;
 import com.nnk.springboot.service.BidService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,7 +16,6 @@ import javax.validation.Valid;
 
 
 @Controller
-@Slf4j
 @RequestMapping("/bidList")
 public class BidListController {
 
@@ -48,10 +46,10 @@ public class BidListController {
         if (!result.hasErrors()) {
             bidService.saveBid(bid);
             model.addAttribute("bidList", bidService.findAllBidList());
-            log.info("success to add a neww bidList {}", bid);
+
             return "redirect:/bidList/list";
         }
-        log.error("can't add BidList");
+
         return "bidList/add";
     }
 
@@ -84,7 +82,7 @@ public class BidListController {
             return "redirect:/bidList/list";
 
         } catch (NotConformDataException e) {
-            log.error("can't delete bidList with id{}", id);
+
             model.addAttribute(bidService.findAllBidList());
             return "redirect:/bidList/list";
         }

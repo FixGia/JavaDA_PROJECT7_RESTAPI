@@ -5,8 +5,6 @@ import com.nnk.springboot.dto.UserRequest;
 import com.nnk.springboot.exception.NotConformDataException;
 import com.nnk.springboot.repositories.UserRepository;
 import com.nnk.springboot.service.UserService;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @Controller
-@Slf4j
 @RequestMapping("/user")
 public class UserController {
 
@@ -50,7 +47,7 @@ public class UserController {
             model.addAttribute("users", userService.findAllUser());
             return "redirect:/user/list";
         }
-        log.error("can't add user");
+
         return "user/add";
     }
 
@@ -82,7 +79,6 @@ public class UserController {
             model.addAttribute("users", userService.findAllUser());
             return "redirect:/user/list";
         } catch (NotConformDataException e) {
-            log.error("can't delete user with id {}", id);
             model.addAttribute("users", userService.findAllUser());
             return "redirect:/user/list";
         }

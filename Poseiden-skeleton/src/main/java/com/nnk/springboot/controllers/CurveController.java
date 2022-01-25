@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @Controller
-@Slf4j
 @RequestMapping("/curvePoint")
 public class CurveController {
 
@@ -43,10 +42,9 @@ public class CurveController {
         if (!result.hasErrors()) {
             curvePointService.saveCurvePoint(curvePoint);
             model.addAttribute("curvePoints", curvePointService.findAllCurvePoint());
-            log.info("Success to add a new CurvePoint", curvePoint);
             return "redirect:/curvePoint/list";
         }
-        log.error("can't add CurvePoint");
+
         return "curvePoint/add";
     }
 
@@ -79,7 +77,6 @@ public class CurveController {
 
             return "redirect:/curvePoint/list";
         } catch (NotConformDataException e) {
-            log.error("can't delete curvePoint with id {}", id);
             model.addAttribute("curvePoints", curvePointService.findAllCurvePoint());
             return "redirect:/curvePoint/list";
         }

@@ -52,7 +52,7 @@ public class UserRequest {
     private String fullname;
 
     @NotBlank(message = "Role is mandatory")
-    @Pattern(regexp = GeneralConstraints.PATTERN_ALPHABETCHARACTERS,
+    @Pattern(regexp = GeneralConstraints.PATTERN_ALPHABET_CHARACTERS,
             message = "Should be alphabets and minimum more than"
                     + " 2 characters")
     private String role;

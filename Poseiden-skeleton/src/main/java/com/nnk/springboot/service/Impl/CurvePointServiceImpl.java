@@ -9,7 +9,8 @@ import com.nnk.springboot.service.CurvePointService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,7 +45,15 @@ public class CurvePointServiceImpl implements CurvePointService {
 
     @Override
     public List<CurvePoint> findAllCurvePoint() {
-        return curvePointRepository.findAll();
+
+       try {
+           log.info("displayed CurvePointList");
+           return curvePointRepository.findAll();
+       } catch (DataNotFoundException e)
+       {
+           log.error("CurvePoint List doesn't exist in DB ");
+           return Collections.emptyList();
+       }
     }
 
     @Override
@@ -82,7 +91,7 @@ public class CurvePointServiceImpl implements CurvePointService {
 
         try {
             curvePointRepository.deleteById(id);
-            log.info("curvepoint with id {} was deleted with success", id);
+            log.info("curvePoint with id {} was deleted with success", id);
         } catch (DataNotFoundException e) {
             log.error("CurvePoint with Id {}, doesn't found in DB", id);
         }
