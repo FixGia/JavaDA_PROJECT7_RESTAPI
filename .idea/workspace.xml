@@ -5,51 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6a2dbb2-288c-4ef2-b01a-da3e9b686f34" name="Changes" comment="Add BidList CRUD operation, Add CurvePoint CRUD operation">
-      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/dto/RatingRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/dto/RuleRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/dto/TradeRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/securityConfig/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/service/Impl/RatingServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/service/Impl/RuleNameServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/service/Impl/TradeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/service/RatingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/service/RuleNameService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/service/TradeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/test/java/com/nnk/springboot/ServiceTest/BidServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/test/java/com/nnk/springboot/ServiceTest/CurvePointServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/test/java/com/nnk/springboot/ServiceTest/RatingServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/test/java/com/nnk/springboot/ServiceTest/RuleServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/test/java/com/nnk/springboot/ServiceTest/TradeServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/test/java/com/nnk/springboot/ServiceTest/UserServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/BidListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/BidListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/CurveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/CurveController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/RatingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/RatingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/RuleNameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/RuleNameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/TradeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/TradeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/dto/GeneralConstraints.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/dto/GeneralConstraints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/dto/UserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/dto/UserRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/service/Impl/BidServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/service/Impl/BidServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/service/Impl/CurvePointServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/service/Impl/CurvePointServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/service/Impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/rating/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/rating/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/rating/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/rating/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/rating/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/rating/update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/ruleName/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/ruleName/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/ruleName/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/ruleName/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/ruleName/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/ruleName/update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/trade/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/trade/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/trade/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/trade/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/trade/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/trade/update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/BidListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/BidListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/CurveController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/CurveController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/RatingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/RatingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/RuleNameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/RuleNameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/TradeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/TradeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/rating/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/rating/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/rating/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/rating/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/rating/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/rating/update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/trade/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/trade/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/trade/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/trade/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/trade/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/trade/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/securityConfig/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/securityConfig/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/bidList/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/bidList/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/bidList/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/bidList/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/curvePoint/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/curvePoint/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/bidList/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/bidList/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/bidList/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/bidList/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/curvePoint/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/curvePoint/update.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,24 +97,80 @@
       <recent name="C:\Users\Etternell\IdeaProjects\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application">
-    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nnk.springboot.Application" />
+  <component name="RunManager" selected="JUnit.com.nnk.springboot.ServiceTest in spring-boot-skeleton">
+    <configuration name="CurvePointServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-boot-skeleton" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.nnk.springboot.*" />
+          <option name="PATTERN" value="com.nnk.springboot.ServiceTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.nnk.springboot.ServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.nnk.springboot.ServiceTest.CurvePointServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="demo" type="DatabaseScript" editBeforeRun="true" temporary="true">
-      <script-file value="$PROJECT_DIR$/Poseiden-skeleton/doc/data.sql" />
-      <script-mode>FILE</script-mode>
-      <method v="2" />
+    <configuration name="RatingServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-boot-skeleton" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nnk.springboot.ServiceTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nnk.springboot.ServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.nnk.springboot.ServiceTest.RatingServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RuleServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-boot-skeleton" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nnk.springboot.ServiceTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nnk.springboot.ServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.nnk.springboot.ServiceTest.RuleServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TradeServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-boot-skeleton" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nnk.springboot.ServiceTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nnk.springboot.ServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.nnk.springboot.ServiceTest.TradeServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.nnk.springboot.ServiceTest in spring-boot-skeleton" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-boot-skeleton" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nnk.springboot.ServiceTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nnk.springboot.ServiceTest" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="spring-boot-skeleton" />
@@ -156,8 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Database Script.demo" />
-        <item itemvalue="Application.Application" />
+        <item itemvalue="JUnit.com.nnk.springboot.ServiceTest in spring-boot-skeleton" />
+        <item itemvalue="JUnit.TradeServiceTest" />
+        <item itemvalue="JUnit.RatingServiceTest" />
+        <item itemvalue="JUnit.RuleServiceTest" />
+        <item itemvalue="JUnit.CurvePointServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -177,6 +205,7 @@
       <workItem from="1642812398642" duration="1233000" />
       <workItem from="1643023507200" duration="13063000" />
       <workItem from="1643114329118" duration="11239000" />
+      <workItem from="1643205414289" duration="5554000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit, Fix some ToDO's">
       <created>1642799705491</created>
