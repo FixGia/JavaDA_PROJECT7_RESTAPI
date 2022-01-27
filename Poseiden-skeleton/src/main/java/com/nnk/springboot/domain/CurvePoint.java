@@ -6,10 +6,10 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
+
 import javax.validation.constraints.NotNull;
-import java.security.Timestamp;
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
+
 
 @Entity
 @Table(name = "CurvePoint")

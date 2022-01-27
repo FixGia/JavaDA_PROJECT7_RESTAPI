@@ -9,6 +9,7 @@ import com.nnk.springboot.service.BidService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -96,6 +97,7 @@ public class BidServiceImpl implements BidService {
             bidListToCreate.setAccount(bidList.getAccount());
             bidListToCreate.setType(bidList.getType());
             bidListToCreate.setBidQuantity(bidList.getBidQuantity());
+            bidListToCreate.setCreationDate(new Timestamp(System.currentTimeMillis()));
             bidListRepository.save(bidListToCreate);
             return bidListToCreate;
         } catch (NotConformDataException exception) {

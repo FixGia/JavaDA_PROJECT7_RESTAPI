@@ -35,7 +35,7 @@ public class UserServiceTest {
     public void setUp(){
         user = new User();
         user.setId(1);
-        user.setFullName("Jean");
+        user.setFullname("Jean");
         user.setUsername("Test");
         user.setRole("USER");
         user.setPassword("password");

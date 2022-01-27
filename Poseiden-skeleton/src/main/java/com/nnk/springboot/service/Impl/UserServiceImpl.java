@@ -1,6 +1,6 @@
 package com.nnk.springboot.service.Impl;
 
-
+import com.nnk.springboot.config.PasswordEncoder;
 import com.nnk.springboot.domain.User;
 import com.nnk.springboot.dto.UserRequest;
 import com.nnk.springboot.exception.DataNotFoundException;
@@ -8,21 +8,27 @@ import com.nnk.springboot.exception.NotConformDataException;
 import com.nnk.springboot.repositories.UserRepository;
 import com.nnk.springboot.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Slf4j
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService, UserDetailsService {
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -31,9 +37,8 @@ public class UserServiceImpl implements UserService {
         try {
             User userToAdd = new User();
             userToAdd.setUsername(user.getUsername());
-            userToAdd.setFullName(user.getFullname());
-            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-            userToAdd.setPassword(encoder.encode(user.getPassword()));
+            userToAdd.setFullname(user.getFullname());
+            userToAdd.setPassword(passwordEncoder.bCryptPasswordEncoder().encode(user.getPassword()));
             userToAdd.setRole(user.getRole());
             log.info("add a new User");
             userRepository.save(userToAdd);
@@ -59,6 +64,20 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User findByUserName(String username) {
+
+        try {
+            User getUser = userRepository.findByUsername(username);
+            log.info("User with id {} was foudn", username);
+            return getUser;
+        } catch (DataNotFoundException e) {
+            log.error("User with id{} doesn't exist in DB", username);
+            return null;
+        }
+    }
+
+
+    @Override
     public User getUserById(Integer id) {
 
         try {
@@ -74,7 +93,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User updateUser(UserRequest user, Integer id) {
 
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
         Optional<User> userToUpdate = userRepository.findById(id);
 
         if (userToUpdate.isPresent()) {
@@ -83,7 +102,7 @@ public class UserServiceImpl implements UserService {
 
             String fullName = user.getFullname();
             if (fullName != null) {
-                userToUpdate.get().setFullName(fullName);
+                userToUpdate.get().setFullname(fullName);
             }
             String userName = user.getUsername();
             if (userName != null) {
@@ -91,7 +110,7 @@ public class UserServiceImpl implements UserService {
             }
             String password = user.getPassword();
             if (password != null) {
-                userToUpdate.get().setPassword(encoder.encode(password));
+                userToUpdate.get().setPassword(passwordEncoder.bCryptPasswordEncoder().encode(password));
             }
             userToUpdate.get().setRole(user.getRole());
             userRepository.save(userToUpdate.get());
@@ -112,4 +131,28 @@ public class UserServiceImpl implements UserService {
             log.error("User with id {} doesn't found in BD", id);
         }
     }
-}
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user = userRepository.findByUsername(username);
+
+        if (user == null) {
+            log.error("User not Found in the DB");
+            throw new UsernameNotFoundException("User not Found in Db");
+        } else {
+            log.info("User {} found in the Db ", username);
+            Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
+            authorities.add(new SimpleGrantedAuthority(user.getRole()));
+            return new org.springframework.security.core.userdetails.User(user.getUsername(),user.getPassword(),authorities);
+            }
+        }
+
+        public User getCurrentUser(){
+
+            Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
+            String username = authentication.getName();
+            return userRepository.findByUsername(username);
+        }
+
+    }
+

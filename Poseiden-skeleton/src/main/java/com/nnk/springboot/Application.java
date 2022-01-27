@@ -1,9 +1,7 @@
 package com.nnk.springboot;
 
-import com.nnk.springboot.service.BidService;
-import com.nnk.springboot.service.CurvePointService;
-import com.nnk.springboot.service.Impl.BidServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.nnk.springboot.dto.UserRequest;
+import com.nnk.springboot.service.Impl.UserServiceImpl;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

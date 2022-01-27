@@ -9,6 +9,8 @@ import com.nnk.springboot.service.TradeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+
+import java.sql.Timestamp;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -31,6 +33,7 @@ public class TradeServiceImpl implements TradeService {
             tradeToAdd.setAccount(tradeRequest.getAccount());
             tradeToAdd.setType(tradeRequest.getType());
             tradeToAdd.setBuyQuantity(tradeRequest.getBuyQuantity());
+            tradeToAdd.setCreationDate(new Timestamp(System.currentTimeMillis()));
             log.info("add a new Trade");
             tradeRepository.save(tradeToAdd);
             return tradeToAdd;

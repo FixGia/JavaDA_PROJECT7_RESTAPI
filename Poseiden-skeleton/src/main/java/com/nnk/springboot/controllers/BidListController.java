@@ -4,6 +4,7 @@ import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.dto.BidListRequest;
 import com.nnk.springboot.exception.NotConformDataException;
 import com.nnk.springboot.service.BidService;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -27,11 +28,13 @@ public class BidListController {
     }
 
     @RequestMapping("/list")
-    public String home(Model model)
-    {
-       model.addAttribute("bidList", bidService.findAllBidList());
-        return "bidList/list";
+    public String home(Model model) {
+
+            model.addAttribute("bidList", bidService.findAllBidList());
+            return "bidList/list";
+
     }
+
 
     @GetMapping("/add")
     public String addBidForm(BidListRequest bid, Model model) {
