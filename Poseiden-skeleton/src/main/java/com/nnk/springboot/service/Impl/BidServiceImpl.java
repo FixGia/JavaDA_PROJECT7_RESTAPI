@@ -97,7 +97,6 @@ public class BidServiceImpl implements BidService {
             bidListToCreate.setAccount(bidList.getAccount());
             bidListToCreate.setType(bidList.getType());
             bidListToCreate.setBidQuantity(bidList.getBidQuantity());
-            bidListToCreate.setCreationDate(new Timestamp(System.currentTimeMillis()));
             bidListRepository.save(bidListToCreate);
             return bidListToCreate;
         } catch (NotConformDataException exception) {

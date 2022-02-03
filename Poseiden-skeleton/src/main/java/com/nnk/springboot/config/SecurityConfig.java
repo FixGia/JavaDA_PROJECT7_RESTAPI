@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.security.web.access.AccessDeniedHandler;
 
 @Configuration
@@ -23,9 +24,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     private final UserDetailsService userDetailsService;
-    private final UserService userService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
     private final AccessDeniedHandler accessDeniedHandler;
+    private final CustomOAuthUserService customOAuthUserService;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -53,7 +54,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/bidList/**", "/rating/**", "/ruleName/**", "/trade/**", "/curvePoint/**").hasAnyAuthority("ADMIN", "USER", "ROLE_USER")
                 .antMatchers("/user/**").hasAuthority("ADMIN").anyRequest().authenticated();
         http.formLogin().defaultSuccessUrl("/bidList/list")
-                .and().oauth2Login()
+                .and().oauth2Login().userInfoEndpoint().userService(customOAuthUserService).and()
                 .defaultSuccessUrl("/bidList/list").permitAll()
                 .failureUrl("/login?error=true");
 

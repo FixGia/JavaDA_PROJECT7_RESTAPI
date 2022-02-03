@@ -33,7 +33,6 @@ public class TradeServiceImpl implements TradeService {
             tradeToAdd.setAccount(tradeRequest.getAccount());
             tradeToAdd.setType(tradeRequest.getType());
             tradeToAdd.setBuyQuantity(tradeRequest.getBuyQuantity());
-            tradeToAdd.setCreationDate(new Timestamp(System.currentTimeMillis()));
             log.info("add a new Trade");
             tradeRepository.save(tradeToAdd);
             return tradeToAdd;

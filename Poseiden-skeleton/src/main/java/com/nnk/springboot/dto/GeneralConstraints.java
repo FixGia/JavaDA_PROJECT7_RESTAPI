@@ -26,4 +26,8 @@ public class GeneralConstraints {
 
     /** The Constant PATTERN_USERNAME. */
     public static final String PATTERN_USERNAME = "^[a-zA-Z][a-zA-Z0-9.@]+${2}";
+
+    /** The Constant PATTERN_PASSWORD. */
+    public static final String PATTERN_PASSWORD = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[&~#@=*-+!€^$£µ%])(?=\\S+$).{8,}$";
+
 }

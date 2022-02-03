@@ -22,7 +22,7 @@ public class LoginController {
         this.userService = userService;
     }
 
-    @GetMapping("login")
+    @GetMapping("/login")
     public ModelAndView login() {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("login");

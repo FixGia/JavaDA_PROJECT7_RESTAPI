@@ -1,22 +1,29 @@
 package com.nnk.springboot.controllers;
 
+import lombok.AllArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@AllArgsConstructor
 public class HomeController
+
+
 {
 	@RequestMapping("/")
-	public String home(Model model)
-	{
+	public String home(Model model) {
+
 		return "home";
 	}
 
 	@RequestMapping("/admin/home")
 	public String adminHome(Model model)
 	{
-		return "redirect:/bidList/list";
+		return "redirect:/user/list";
 	}
 
 

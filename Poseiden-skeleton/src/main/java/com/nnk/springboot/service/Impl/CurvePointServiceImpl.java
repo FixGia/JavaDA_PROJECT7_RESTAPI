@@ -35,7 +35,7 @@ public class CurvePointServiceImpl implements CurvePointService {
             curvePointToAdd.setCurveId(curvePointRequest.getCurveId());
             curvePointToAdd.setTerm(curvePointRequest.getTerm());
             curvePointToAdd.setValue(curvePointRequest.getValue());
-            curvePointToAdd.setCreationDate(new Timestamp(System.currentTimeMillis()));
+
             log.info("add a new curvePoint");
             curvePointRepository.save(curvePointToAdd);
             return curvePointToAdd;

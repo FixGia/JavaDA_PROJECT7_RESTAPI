@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
-
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
@@ -33,7 +32,7 @@ public class UserRequest {
     @Length(max = GeneralConstraints.VARIABLE_LENGTH_125,
             message = "The maximum length for password should"
                     + " be 125 characters")
-    @Pattern(regexp = UserConstraints.PATTERN_PASSWORD,
+    @Pattern(regexp = GeneralConstraints.PATTERN_PASSWORD,
             message = "The password must contain at least"
                     + " 8 characters that includes"
                     + " any one uppercase letter,"

@@ -5,6 +5,7 @@ import com.nnk.springboot.domain.User;
 import com.nnk.springboot.dto.UserRequest;
 
 import java.util.List;
+import java.util.Map;
 
 public interface UserService {
 
@@ -21,4 +22,6 @@ public interface UserService {
     public User updateUser(UserRequest user, Integer id);
 
     public void deleteUserById(Integer id);
+
+
 }
