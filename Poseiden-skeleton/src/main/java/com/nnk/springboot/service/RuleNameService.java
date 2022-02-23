@@ -7,13 +7,13 @@ import java.util.List;
 
 public interface RuleNameService {
 
-    public RuleName saveRuleName(RuleRequest ruleRequest);
+    RuleName saveRuleName(RuleRequest ruleRequest);
 
-    public List<RuleName> findAllRule();
+    List<RuleName> findAllRule();
 
-    public RuleName getRuleById(Integer id);
+    RuleName getRuleById(Integer id);
 
-    public RuleName updateRule(RuleRequest ruleRequest, Integer id);
+    void updateRule(RuleRequest ruleRequest, Integer id);
 
-    public void deleteRuleName(Integer id);
+    void deleteRuleName(Integer id);
 }

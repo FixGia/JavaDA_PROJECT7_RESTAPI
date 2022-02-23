@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CustomOAuth2User.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.config</a> &gt; <span class="el_source">CustomOAuth2User.java</span></div><h1>CustomOAuth2User.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.config;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.oauth2.core.user.OAuth2User;
+
+import java.util.Collection;
+import java.util.Map;
+
+public class CustomOAuth2User implements OAuth2User {
+
+    private OAuth2User oAuth2User;
+
+<span class="nc" id="L13">    public CustomOAuth2User(OAuth2User oAuth2User){</span>
+
+<span class="nc" id="L15">        this.oAuth2User = oAuth2User;</span>
+<span class="nc" id="L16">    }</span>
+
+    @Override
+    public Map&lt;String, Object&gt; getAttributes() {
+<span class="nc" id="L20">        return oAuth2User.getAttributes();</span>
+    }
+
+    @Override
+    public Collection&lt;? extends GrantedAuthority&gt; getAuthorities() {
+
+<span class="nc" id="L26">        return oAuth2User.getAuthorities();</span>
+    }
+
+
+    @Override
+    public String getName() {
+<span class="nc" id="L32">        return oAuth2User.getAttribute(&quot;name&quot;);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

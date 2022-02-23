@@ -1,11 +1,13 @@
 package com.nnk.springboot.ServiceTest;
 
 
+import com.nnk.springboot.config.PasswordEncoder;
 import com.nnk.springboot.domain.User;
 import com.nnk.springboot.dto.UserRequest;
-import com.nnk.springboot.exception.DataNotFoundException;
+
 import com.nnk.springboot.repositories.UserRepository;
 import com.nnk.springboot.service.Impl.UserServiceImpl;
+import org.hamcrest.MatcherAssert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -13,18 +15,27 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.web.servlet.handler.UserRoleAuthorizationInterceptor;
-
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
+
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 
 @ExtendWith(MockitoExtension.class)
 public class UserServiceTest {
 
     private User user ;
     private UserRequest userRequest;
+    private UserRequest userToSave;
+    private Authentication authentication;
 
-
+    @MockBean
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    @Mock
+    private BCryptPasswordEncoder passwordEncoder;
     @Mock
     private UserRepository userRepository;
     @InjectMocks
@@ -37,15 +48,20 @@ public class UserServiceTest {
         user.setId(1);
         user.setFullname("Jean");
         user.setUsername("Test");
-        user.setRole("USER");
-        user.setPassword("password");
+
 
         userRequest = new UserRequest();
+        userRequest.setId(1);
         userRequest.setUsername("Test2");
         userRequest.setFullname("Test2");
-        userRequest.setPassword("password2");
+        user.setRole("USER");
+        userRequest.setPassword(user.getPassword());
 
-        lenient().when(userRepository.save(user)).thenReturn(user);
+        authentication = Mockito.mock(Authentication.class);
+        SecurityContext securityContext = Mockito.mock(SecurityContext.class);
+        Mockito.lenient().when(securityContext.getAuthentication()).thenReturn(authentication);
+        SecurityContextHolder.setContext(securityContext);
+
     }
 
     @Test
@@ -68,17 +84,31 @@ public class UserServiceTest {
         verify(userRepository, times(1)).findAll();
     }
 
+
+    @Test
+    public void updateUserTest(){
+
+        when(userRepository
+                .findById(anyInt()))
+                .thenReturn(java.util.Optional.ofNullable(user));
+
+        if(user !=null) {
+            userService.updateUser(userRequest, 1);
+        } else
+        {
+            verify(userRepository, times(0)).save(user);
+        }
+
+
+    }
+
     @Test
     public void saveUserTest(){
 
         userService.saveUser(userRequest);
-        verify(userRepository, times(1)).save(any(User.class));
+        verify(userRepository,times(1)).save(any(User.class));
+
     }
 
-    @Test
-    public void updateUserTest(){
-        lenient().when(userRepository.findById(1)).thenReturn(java.util.Optional.ofNullable(user));
-        userService.updateUser(userRequest, 1);
-        verify(userRepository, times(1)).save(user);
-    }
+
 }

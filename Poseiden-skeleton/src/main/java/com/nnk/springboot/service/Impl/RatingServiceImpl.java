@@ -72,7 +72,7 @@ public class RatingServiceImpl implements RatingService {
     }
 
     @Override
-    public Rating updateRating(RatingRequest ratingRequest, Integer id) {
+    public void updateRating(RatingRequest ratingRequest, Integer id) {
 
         Optional<Rating> ratingToUpdate= ratingRepository.findById(id);
         if (ratingToUpdate.isPresent()){
@@ -94,7 +94,8 @@ public class RatingServiceImpl implements RatingService {
             ratingToUpdate.get().setOrderNumber(ratingRequest.getOrderNumber());
             ratingRepository.save(ratingToUpdate.get());
             log.info("Rating with id {} was updated", id);
-            return ratingToUpdate.get();
+            ratingToUpdate.get();
+            return;
         }
         throw  new DataNotFoundException("Rating doesn't found in DB");
     }

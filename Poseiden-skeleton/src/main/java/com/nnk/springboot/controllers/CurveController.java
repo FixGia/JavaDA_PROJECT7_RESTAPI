@@ -17,7 +17,7 @@ import javax.validation.Valid;
 @RequestMapping("/curvePoint")
 public class CurveController {
 
-    private CurvePointService curvePointService;
+    private final CurvePointService curvePointService;
 
     public CurveController(CurvePointService curvePointService) {
         this.curvePointService = curvePointService;

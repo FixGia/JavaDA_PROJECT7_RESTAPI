@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CurvePointServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.service.Impl</a> &gt; <span class="el_source">CurvePointServiceImpl.java</span></div><h1>CurvePointServiceImpl.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.service.Impl;
+
+import com.nnk.springboot.domain.CurvePoint;
+import com.nnk.springboot.dto.CurvePointRequest;
+import com.nnk.springboot.exception.DataNotFoundException;
+import com.nnk.springboot.exception.NotConformDataException;
+import com.nnk.springboot.repositories.CurvePointRepository;
+import com.nnk.springboot.service.CurvePointService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+
+import java.sql.Timestamp;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+
+@Service
+<span class="fc" id="L19">@Slf4j</span>
+public class CurvePointServiceImpl implements CurvePointService {
+
+
+    private CurvePointRepository curvePointRepository;
+
+<span class="fc" id="L25">    public CurvePointServiceImpl(CurvePointRepository curvePointRepository) {</span>
+<span class="fc" id="L26">        this.curvePointRepository = curvePointRepository;</span>
+<span class="fc" id="L27">    }</span>
+
+
+    @Override
+    public CurvePoint saveCurvePoint(CurvePointRequest curvePointRequest) {
+
+        try {
+<span class="fc" id="L34">            CurvePoint curvePointToAdd= new CurvePoint();</span>
+<span class="fc" id="L35">            curvePointToAdd.setCurveId(curvePointRequest.getCurveId());</span>
+<span class="fc" id="L36">            curvePointToAdd.setTerm(curvePointRequest.getTerm());</span>
+<span class="fc" id="L37">            curvePointToAdd.setValue(curvePointRequest.getValue());</span>
+
+<span class="fc" id="L39">            log.info(&quot;add a new curvePoint&quot;);</span>
+<span class="fc" id="L40">            curvePointRepository.save(curvePointToAdd);</span>
+<span class="fc" id="L41">            return curvePointToAdd;</span>
+<span class="nc" id="L42">        } catch (NotConformDataException e) {</span>
+<span class="nc" id="L43">            log.error(&quot;Can't add a new CurvePoint&quot;);</span>
+<span class="nc" id="L44">            return null;</span>
+        }
+    }
+
+    @Override
+    public List&lt;CurvePoint&gt; findAllCurvePoint() {
+
+       try {
+<span class="fc" id="L52">           log.info(&quot;displayed CurvePointList&quot;);</span>
+<span class="fc" id="L53">           return curvePointRepository.findAll();</span>
+<span class="nc" id="L54">       } catch (DataNotFoundException e)</span>
+       {
+<span class="nc" id="L56">           log.error(&quot;CurvePoint List doesn't exist in DB &quot;);</span>
+<span class="nc" id="L57">           return Collections.emptyList();</span>
+       }
+    }
+
+    @Override
+    public CurvePoint getCurvePointById(Integer id) {
+
+        try {
+<span class="fc" id="L65">            Optional&lt;CurvePoint&gt; getCurvePoint = curvePointRepository.findById(id);</span>
+<span class="fc" id="L66">            log.info(&quot;curvePoint with id {} was found in DB&quot;, id);</span>
+<span class="fc" id="L67">            return getCurvePoint.get();</span>
+<span class="nc" id="L68">        } catch (DataNotFoundException e) {</span>
+<span class="nc" id="L69">            log.error(&quot;curvePoint with id {} doesn't found in DB&quot;, id);</span>
+<span class="nc" id="L70">            return null;</span>
+        }
+    }
+    @Override
+    public CurvePoint updateCurvePoint(CurvePointRequest curvePointRequest, Integer id) {
+
+<span class="fc" id="L76">        Optional&lt;CurvePoint&gt; curvePointToUpdate = curvePointRepository.findById(id);</span>
+<span class="pc bpc" id="L77" title="1 of 2 branches missed.">        if( curvePointToUpdate.isPresent()){</span>
+
+<span class="fc" id="L79">            curvePointToUpdate.get().setId(id);</span>
+<span class="fc" id="L80">            curvePointToUpdate.get().setCurveId(curvePointRequest.getCurveId());</span>
+<span class="fc" id="L81">            curvePointToUpdate.get().setValue(curvePointRequest.getValue());</span>
+<span class="fc" id="L82">            curvePointToUpdate.get().setTerm(curvePointRequest.getTerm());</span>
+<span class="fc" id="L83">            curvePointRepository.save(curvePointToUpdate.get());</span>
+
+<span class="fc" id="L85">            log.info(&quot;CurvePoint with id {} wad updated&quot;, id );</span>
+<span class="fc" id="L86">            return curvePointToUpdate.get();</span>
+
+<span class="nc" id="L88">        } throw new DataNotFoundException(&quot;CurvePoint doesn't found in DB&quot;);</span>
+    }
+
+    @Override
+    public void deleteCurvePointById(Integer id) {
+
+        try {
+<span class="fc" id="L95">            curvePointRepository.deleteById(id);</span>
+<span class="fc" id="L96">            log.info(&quot;curvePoint with id {} was deleted with success&quot;, id);</span>
+<span class="nc" id="L97">        } catch (DataNotFoundException e) {</span>
+<span class="nc" id="L98">            log.error(&quot;CurvePoint with Id {}, doesn't found in DB&quot;, id);</span>
+<span class="fc" id="L99">        }</span>
+<span class="fc" id="L100">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

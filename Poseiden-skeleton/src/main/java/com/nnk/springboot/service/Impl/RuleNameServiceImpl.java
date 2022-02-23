@@ -67,7 +67,7 @@ public class RuleNameServiceImpl implements RuleNameService {
     }
 
     @Override
-    public RuleName updateRule(RuleRequest ruleRequest, Integer id) {
+    public void updateRule(RuleRequest ruleRequest, Integer id) {
         Optional<RuleName> ruleToUpdate = ruleNameRepository.findById(id);
         if (ruleToUpdate.isPresent()) {
 
@@ -81,7 +81,8 @@ public class RuleNameServiceImpl implements RuleNameService {
             ruleToUpdate.get().setSqlPart(ruleRequest.getSqlPart());
             ruleNameRepository.save(ruleToUpdate.get());
             log.info("Rule with id {} was updated", id);
-            return ruleToUpdate.get();
+            ruleToUpdate.get();
+            return;
         } throw new DataNotFoundException("Rule doesn't exist in Db");
     }
 

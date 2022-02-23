@@ -10,7 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 
-import java.sql.Timestamp;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -70,7 +69,7 @@ public class TradeServiceImpl implements TradeService {
     }
 
     @Override
-    public Trade updateTrade(TradeRequest tradeRequest, Integer id) {
+    public void updateTrade(TradeRequest tradeRequest, Integer id) {
         Optional<Trade> tradeToUpdate = tradeRepository.findById(id);
         if (tradeToUpdate.isPresent()) {
 
@@ -80,7 +79,8 @@ public class TradeServiceImpl implements TradeService {
             tradeToUpdate.get().setBuyQuantity(tradeRequest.getBuyQuantity());
             tradeRepository.save(tradeToUpdate.get());
             log.info("Trade with id {} was updated", id);
-            return tradeToUpdate.get();
+            tradeToUpdate.get();
+            return;
         } throw new DataNotFoundException("Trade doesn't found in DB");
     }
 

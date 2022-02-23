@@ -9,7 +9,6 @@ import com.nnk.springboot.service.BidService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.sql.Timestamp;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -51,7 +50,7 @@ public class BidServiceImpl implements BidService {
     }
 
     @Override
-    public BidList updateBidList(BidListRequest bidList, Integer id) {
+    public void updateBidList(BidListRequest bidList, Integer id) {
 
         Optional<BidList> searchBidList = bidListRepository.findById(id);
 
@@ -73,7 +72,7 @@ public class BidServiceImpl implements BidService {
 
             log.info("bid with id{} was updated", searchBidList.get().getBidListId());
             bidListRepository.save(updateBidList);
-            return updateBidList;
+            return;
         }
         throw new DataNotFoundException("bid with id: " + id + " wasn't found");
     }

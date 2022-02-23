@@ -7,14 +7,14 @@ import java.util.List;
 
 public interface TradeService {
 
-    public Trade saveTrade(TradeRequest tradeRequest);
+    Trade saveTrade(TradeRequest tradeRequest);
 
-    public List<Trade> findAllTrade();
+    List<Trade> findAllTrade();
 
-    public Trade getTradeById(Integer id);
+    Trade getTradeById(Integer id);
 
-    public Trade updateTrade(TradeRequest tradeRequest, Integer id);
+    void updateTrade(TradeRequest tradeRequest, Integer id);
 
-    public void deleteTradeById(Integer id);
+    void deleteTradeById(Integer id);
 
 }

@@ -1,6 +1,6 @@
 package com.nnk.springboot.service.Impl;
 
-import com.nnk.springboot.config.PasswordEncoder;
+
 import com.nnk.springboot.domain.User;
 import com.nnk.springboot.dto.UserRequest;
 import com.nnk.springboot.exception.DataNotFoundException;
@@ -8,14 +8,13 @@ import com.nnk.springboot.exception.NotConformDataException;
 import com.nnk.springboot.repositories.UserRepository;
 import com.nnk.springboot.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
+
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
+
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -39,7 +38,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
             User userToAdd = new User();
             userToAdd.setUsername(user.getUsername());
             userToAdd.setFullname(user.getFullname());
-            userToAdd.setPassword(passwordEncoder.bCryptPasswordEncoder().encode(user.getPassword()));
+            userToAdd.setPassword(passwordEncoder.encode(user.getPassword()));
             userToAdd.setRole(user.getRole());
             log.info("add a new User");
             userRepository.save(userToAdd);
@@ -64,7 +63,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         }
     }
 
-    @Override
+
     public User findByUserName(String username) {
 
         try {
@@ -92,7 +91,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    public User updateUser(UserRequest user, Integer id) {
+    public void updateUser(UserRequest user, Integer id) {
 
 
         Optional<User> userToUpdate = userRepository.findById(id);
@@ -111,12 +110,13 @@ public class UserServiceImpl implements UserService, UserDetailsService {
             }
             String password = user.getPassword();
             if (password != null) {
-                userToUpdate.get().setPassword(passwordEncoder.bCryptPasswordEncoder().encode(password));
+                userToUpdate.get().setPassword(passwordEncoder.encode(password));
             }
             userToUpdate.get().setRole(user.getRole());
             userRepository.save(userToUpdate.get());
             log.info("User with id {} was updated", user.getId());
-            return userToUpdate.get();
+            userToUpdate.get();
+            return;
         }
         throw new DataNotFoundException("User doesn't found in DB");
     }
@@ -146,20 +146,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
             authorities.add(new SimpleGrantedAuthority(user.getRole()));
             return new org.springframework.security.core.userdetails.User(user.getUsername(),user.getPassword(),authorities);
             }
-        }
-
-
-        public String loadUserNameFromOAuth2() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-            return  userDetails.getUsername();
-
-        }
-        public User getCurrentUser(){
-
-            Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
-            String username = authentication.getName();
-            return userRepository.findByUsername(username);
         }
 
 }

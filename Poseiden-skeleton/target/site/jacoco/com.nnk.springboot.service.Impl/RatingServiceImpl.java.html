@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RatingServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.service.Impl</a> &gt; <span class="el_source">RatingServiceImpl.java</span></div><h1>RatingServiceImpl.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.service.Impl;
+
+
+import com.nnk.springboot.domain.Rating;
+import com.nnk.springboot.dto.RatingRequest;
+import com.nnk.springboot.exception.DataNotFoundException;
+import com.nnk.springboot.exception.NotConformDataException;
+import com.nnk.springboot.repositories.RatingRepository;
+import com.nnk.springboot.service.RatingService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+
+<span class="fc" id="L17">@Slf4j</span>
+@Service
+public class RatingServiceImpl implements RatingService {
+
+    private RatingRepository ratingRepository;
+
+<span class="fc" id="L23">    public RatingServiceImpl(RatingRepository ratingRepository) {</span>
+<span class="fc" id="L24">        this.ratingRepository = ratingRepository;</span>
+<span class="fc" id="L25">    }</span>
+
+
+    @Override
+    public Rating saveRating(RatingRequest ratingRequest) {
+
+        try {
+<span class="fc" id="L32">            Rating ratingToAdd = new Rating();</span>
+<span class="fc" id="L33">            ratingToAdd.setFitchRating(ratingRequest.getFitchRating());</span>
+<span class="fc" id="L34">            ratingToAdd.setMoodysRating(ratingRequest.getMoodysRating());</span>
+<span class="fc" id="L35">            ratingToAdd.setSandPRating(ratingRequest.getSandPRating());</span>
+<span class="fc" id="L36">            ratingToAdd.setOrderNumber(ratingRequest.getOrderNumber());</span>
+<span class="fc" id="L37">            log.info(&quot;add a new Rating&quot;);</span>
+<span class="fc" id="L38">            ratingRepository.save(ratingToAdd);</span>
+<span class="fc" id="L39">            return ratingToAdd;</span>
+<span class="nc" id="L40">        } catch (NotConformDataException e) {</span>
+<span class="nc" id="L41">            log.error(&quot;can't add a new Rating&quot;);</span>
+<span class="nc" id="L42">            return null;</span>
+        }
+    }
+
+
+
+    @Override
+    public List&lt;Rating&gt; findAllRating() {
+
+        try {
+<span class="fc" id="L52">            log.info(&quot;displayed RatingList&quot;);</span>
+<span class="fc" id="L53">            return ratingRepository.findAll();</span>
+<span class="nc" id="L54">        } catch (DataNotFoundException e)</span>
+        {
+<span class="nc" id="L56">            log.error(&quot;RatingList doesn't exist in DB &quot;);</span>
+<span class="nc" id="L57">            return Collections.emptyList();</span>
+        }
+    }
+
+    @Override
+    public Rating getRatingById(Integer id) {
+
+        try {
+<span class="fc" id="L65">            Optional&lt;Rating&gt; getRating = ratingRepository.findById(id);</span>
+<span class="fc" id="L66">            log.info(&quot;Rating with id {} found&quot;, id);</span>
+<span class="fc" id="L67">            return getRating.get();</span>
+<span class="nc" id="L68">        } catch (DataNotFoundException e) {</span>
+<span class="nc" id="L69">            log.error(&quot;Rating with id {} doesn't found&quot;, id);</span>
+<span class="nc" id="L70">            return null;</span>
+        }
+    }
+
+    @Override
+    public Rating updateRating(RatingRequest ratingRequest, Integer id) {
+
+<span class="fc" id="L77">        Optional&lt;Rating&gt; ratingToUpdate= ratingRepository.findById(id);</span>
+<span class="pc bpc" id="L78" title="1 of 2 branches missed.">        if (ratingToUpdate.isPresent()){</span>
+
+<span class="fc" id="L80">            ratingToUpdate.get().setId(id);</span>
+
+<span class="fc" id="L82">            String fitchRating = ratingRequest.getFitchRating();</span>
+<span class="pc bpc" id="L83" title="1 of 2 branches missed.">            if (fitchRating!= null) {</span>
+<span class="fc" id="L84">                ratingToUpdate.get().setFitchRating(fitchRating);</span>
+            }
+<span class="fc" id="L86">            String moodyRating = ratingRequest.getMoodysRating();</span>
+<span class="pc bpc" id="L87" title="1 of 2 branches missed.">            if (moodyRating != null) {</span>
+<span class="fc" id="L88">                ratingToUpdate.get().setMoodysRating(moodyRating);</span>
+            }
+<span class="fc" id="L90">            String sandPRating = ratingRequest.getSandPRating();</span>
+<span class="pc bpc" id="L91" title="1 of 2 branches missed.">            if (sandPRating != null) {</span>
+<span class="fc" id="L92">                ratingToUpdate.get().setSandPRating(sandPRating);</span>
+            }
+<span class="fc" id="L94">            ratingToUpdate.get().setOrderNumber(ratingRequest.getOrderNumber());</span>
+<span class="fc" id="L95">            ratingRepository.save(ratingToUpdate.get());</span>
+<span class="fc" id="L96">            log.info(&quot;Rating with id {} was updated&quot;, id);</span>
+<span class="fc" id="L97">            return ratingToUpdate.get();</span>
+        }
+<span class="nc" id="L99">        throw  new DataNotFoundException(&quot;Rating doesn't found in DB&quot;);</span>
+    }
+
+    @Override
+    public void deleteRatingById(Integer id) {
+
+        try {
+<span class="fc" id="L106">            ratingRepository.deleteById(id);</span>
+<span class="nc" id="L107">        } catch (DataNotFoundException e) {</span>
+<span class="nc" id="L108">            log.error(&quot;Rating with id {} doesn't found in DB&quot;, id);</span>
+<span class="fc" id="L109">        }</span>
+<span class="fc" id="L110">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

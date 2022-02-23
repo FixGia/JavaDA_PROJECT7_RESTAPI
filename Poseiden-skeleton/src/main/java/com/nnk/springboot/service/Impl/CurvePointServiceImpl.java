@@ -10,7 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 
-import java.sql.Timestamp;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -71,7 +70,7 @@ public class CurvePointServiceImpl implements CurvePointService {
         }
     }
     @Override
-    public CurvePoint updateCurvePoint(CurvePointRequest curvePointRequest, Integer id) {
+    public void updateCurvePoint(CurvePointRequest curvePointRequest, Integer id) {
 
         Optional<CurvePoint> curvePointToUpdate = curvePointRepository.findById(id);
         if( curvePointToUpdate.isPresent()){
@@ -83,7 +82,8 @@ public class CurvePointServiceImpl implements CurvePointService {
             curvePointRepository.save(curvePointToUpdate.get());
 
             log.info("CurvePoint with id {} wad updated", id );
-            return curvePointToUpdate.get();
+            curvePointToUpdate.get();
+            return;
 
         } throw new DataNotFoundException("CurvePoint doesn't found in DB");
     }

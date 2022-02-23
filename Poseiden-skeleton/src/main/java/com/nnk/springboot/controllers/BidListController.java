@@ -4,7 +4,6 @@ import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.dto.BidListRequest;
 import com.nnk.springboot.exception.NotConformDataException;
 import com.nnk.springboot.service.BidService;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,7 +17,7 @@ import javax.validation.Valid;
 public class BidListController {
 
 
-    private BidService bidService;
+    private final BidService bidService;
 
     public BidListController(BidService bidService) {
         this.bidService = bidService;

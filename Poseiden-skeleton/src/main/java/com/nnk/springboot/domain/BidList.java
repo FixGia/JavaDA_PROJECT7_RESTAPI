@@ -10,7 +10,7 @@ import javax.validation.constraints.NotBlank;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "BidList")
+@Table(name = "bid_list")
 @Data
 @EqualsAndHashCode
 @NoArgsConstructor

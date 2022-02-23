@@ -15,7 +15,7 @@ import javax.validation.Valid;
 @RequestMapping("/ruleName")
 public class RuleNameController {
 
-    private RuleNameService ruleNameService;
+    private final RuleNameService ruleNameService;
 
     public RuleNameController(RuleNameService ruleNameService) {
         this.ruleNameService = ruleNameService;

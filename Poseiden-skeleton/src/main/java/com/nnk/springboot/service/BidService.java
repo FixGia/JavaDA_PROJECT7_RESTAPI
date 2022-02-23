@@ -7,13 +7,13 @@ import java.util.List;
 
 public interface BidService {
 
-    public BidList saveBid(BidListRequest bidList);
+    BidList saveBid(BidListRequest bidList);
 
-    public List<BidList> findAllBidList();
+    List<BidList> findAllBidList();
 
-    public BidList getBidById(Integer id);
+    BidList getBidById(Integer id);
 
-    public BidList updateBidList(BidListRequest bidList, Integer id);
+    void updateBidList(BidListRequest bidList, Integer id);
 
-    public void deleteBidById(Integer id);
+    void deleteBidById(Integer id);
 }

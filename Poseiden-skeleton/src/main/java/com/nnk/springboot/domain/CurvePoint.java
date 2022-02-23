@@ -12,7 +12,7 @@ import java.sql.Timestamp;
 
 
 @Entity
-@Table(name = "CurvePoint")
+@Table(name = "curve_point")
 @Data
 @EqualsAndHashCode
 @NoArgsConstructor

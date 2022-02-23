@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode
-@Table(name =" RuleName")
+@Table(name ="Rule_name")
 public class RuleName {
 
   @Id

@@ -8,14 +8,14 @@ import java.util.List;
 public interface CurvePointService {
 
 
-    public CurvePoint saveCurvePoint(CurvePointRequest curvePointRequest);
+    CurvePoint saveCurvePoint(CurvePointRequest curvePointRequest);
 
-    public List<CurvePoint> findAllCurvePoint();
+    List<CurvePoint> findAllCurvePoint();
 
-    public CurvePoint getCurvePointById(Integer id);
+    CurvePoint getCurvePointById(Integer id);
 
-    public CurvePoint updateCurvePoint(CurvePointRequest curvePointRequest, Integer id);
+    void updateCurvePoint(CurvePointRequest curvePointRequest, Integer id);
 
-    public void deleteCurvePointById( Integer id);
+    void deleteCurvePointById( Integer id);
 
 }

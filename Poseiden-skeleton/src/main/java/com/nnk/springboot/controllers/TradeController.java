@@ -15,7 +15,7 @@ import javax.validation.Valid;
 @RequestMapping("/trade")
 public class TradeController {
 
-    private TradeService tradeService;
+    private final TradeService tradeService;
 
     public TradeController(TradeService tradeService) {
         this.tradeService = tradeService;
