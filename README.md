@@ -1,6 +1,9 @@
 # POSEIDON APPLICATION
 ![poseidon2](https://user-images.githubusercontent.com/79265943/155343854-8ea9c5b1-db06-4f7a-bed6-47c5f1db86de.png)
 
+
+![log poseidon](https://user-images.githubusercontent.com/79265943/155349739-7b1049c2-1456-4bde-8279-e79b498bd35d.png)
+
 # PROJECT OC
 # BackEnd Application
 
