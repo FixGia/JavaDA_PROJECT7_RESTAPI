@@ -11,6 +11,10 @@
 	    <form th:action="@{/app-logout}" method="POST">
 	         <input type="submit" value="Logout"/>
 	    </form>
+       </br> </br>
+       <form th:action="@{/bidList/list}" method="GET">
+           <input type="submit" value="Home"/>
+       </form>
    </div> 	 
     <p class="error" th:text="${errorMsg}">Error</p>
 </body>

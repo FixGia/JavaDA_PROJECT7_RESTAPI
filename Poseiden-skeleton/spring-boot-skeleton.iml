@@ -217,5 +217,7 @@
     <orderEntry type="library" name="Maven: org.ow2.asm:asm-tree:7.2" level="project" />
     <orderEntry type="library" name="Maven: org.jacoco:org.jacoco.report:0.8.5" level="project" />
     <orderEntry type="library" name="Maven: com.h2database:h2:1.4.199" level="project" />
+    <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
   </component>
 </module>

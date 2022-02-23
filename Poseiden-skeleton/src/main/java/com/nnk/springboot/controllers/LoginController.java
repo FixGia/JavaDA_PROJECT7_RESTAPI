@@ -1,17 +1,15 @@
 package com.nnk.springboot.controllers;
 
-import com.nnk.springboot.domain.User;
 import com.nnk.springboot.service.UserService;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.security.Principal;
 
 @Controller
+@Log4j2
 @RequestMapping("app")
 public class LoginController {
 
@@ -21,6 +19,7 @@ public class LoginController {
     public LoginController(UserService userService) {
         this.userService = userService;
     }
+
 
     @GetMapping("/login")
     public ModelAndView login() {
@@ -46,7 +45,13 @@ public class LoginController {
         return mav;
     }
 
-
-
+    @GetMapping("/login?error")
+    public ModelAndView LogError(){
+        ModelAndView mav = new ModelAndView();
+        String errorMessage = " You are write a wrong username or a wrong password.";
+        mav.addObject("errorMsg", errorMessage);
+        mav.setViewName("error");
+        return mav;
+    }
 
 }

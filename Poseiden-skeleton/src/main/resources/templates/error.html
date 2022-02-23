@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title> LogError </title>
+</head>
+<body>
+<div>
+    <center>
+        </br> </br> </br> </br>
+        <div class="container-error">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="error-template">
+                        <h1>Oops!</h1>
+                        <h2> ERROR Login / Another Error </h2>
+                        <div class="error-details">Sorry, an error has occurred,
+                            Requested page not found!</div>
+                        </br> </br>
+                        <div class="col-6 text-right">
+                            <div sec:authorize="isAuthenticated()">
+                                Logged in user : <span sec:authentication="name"></span></div>
+                            <form th:action="@{/app-logout}" method="POST">
+                                <input type="submit" value="Logout"/>
+                            </form>
+                        </div>
+                        <p class="error" th:text="${errorMsg}">Error</p>
+
+                        <div class="error-actions">
+
+                            <form th:action="@{/bidList/list}" method="GET">
+                                <input type="submit" value="Home"/>
+                            </form>
+</br>
+                            <div class="error-details"
+                                 style="color: rgb(0, 101, 202); font-size: 1.0em; font-weight: normal;">
+                                Still struggling !!! ==> Contact Support line : contact@poseidon.com..</div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+</div>
+</body>
+</html>

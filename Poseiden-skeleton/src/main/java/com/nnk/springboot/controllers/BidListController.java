@@ -4,6 +4,7 @@ import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.dto.BidListRequest;
 import com.nnk.springboot.exception.NotConformDataException;
 import com.nnk.springboot.service.BidService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,6 +15,7 @@ import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/bidList")
+@Slf4j
 public class BidListController {
 
 
@@ -23,7 +25,7 @@ public class BidListController {
         this.bidService = bidService;
     }
 
-    @RequestMapping("/list")
+    @GetMapping("/list")
     public String home(Model model) {
 
             model.addAttribute("bidList", bidService.findAllBidList());
@@ -48,6 +50,9 @@ public class BidListController {
 
             return "redirect:/bidList/list";
         }
+
+        log.error("Request post for bidList/validate"
+                + " Error(s) {} ", result);
 
         return "bidList/add";
     }

@@ -82,7 +82,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
         try {
             Optional<User> getUser = userRepository.findById(id);
-            log.info("User with id {} was foudn", id);
+            log.info("User with id {} was found", id);
             return getUser.get();
         } catch (DataNotFoundException e) {
             log.error("User with id{} doesn't exist in DB", id);
