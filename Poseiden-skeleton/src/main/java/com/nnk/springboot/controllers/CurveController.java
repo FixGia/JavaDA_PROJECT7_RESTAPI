@@ -45,6 +45,7 @@ public class CurveController {
             return "redirect:/curvePoint/list";
         }
 
+        model.addAttribute("curvePoint", curvePoint);
         return "curvePoint/add";
     }
 
@@ -61,7 +62,9 @@ public class CurveController {
                             BindingResult result, Model model) {
 
         if (result.hasErrors()) {
-            return "curvePoint/list";
+
+            model.addAttribute("curvePoint", curvePointService.getCurvePointById(id));
+            return "curvePoint/update";
         }
         curvePointService.updateCurvePoint(curvePoint, id);
         model.addAttribute("CurvePoints", curvePointService.findAllCurvePoint());

@@ -54,6 +54,7 @@ public class BidListController {
         log.error("Request post for bidList/validate"
                 + " Error(s) {} ", result);
 
+        model.addAttribute("bidList", bid);
         return "bidList/add";
     }
 
@@ -68,6 +69,9 @@ public class BidListController {
     public String updateBid(@PathVariable("id") Integer id, @Valid BidListRequest bidList,
                              BindingResult result, Model model) {
        if(result.hasErrors()){
+
+
+           model.addAttribute("bidList", bidService.getBidById(id));
            return "bidList/update";
        }
 

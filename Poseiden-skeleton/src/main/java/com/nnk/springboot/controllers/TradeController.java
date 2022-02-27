@@ -43,6 +43,7 @@ public class TradeController {
            return "redirect:/trade/list";
        }
 
+        model.addAttribute("trade", trade);
         return "trade/add";
     }
 
@@ -59,6 +60,7 @@ public class TradeController {
                              BindingResult result, Model model) {
 
         if (result.hasErrors()) {
+            model.addAttribute("trade", tradeService.getTradeById(id));
             return "redirect:/trade/update";
         }
         tradeService.updateTrade(trade, id);

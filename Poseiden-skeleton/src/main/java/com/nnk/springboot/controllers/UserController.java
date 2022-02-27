@@ -46,7 +46,7 @@ public class UserController {
             model.addAttribute("users", userService.findAllUser());
             return "redirect:/user/list";
         }
-
+        model.addAttribute("user", user);
         return "user/add";
     }
 
@@ -62,6 +62,7 @@ public class UserController {
                              BindingResult result, Model model) {
 
         if (result.hasErrors()) {
+            model.addAttribute("user", userService.getUserById(id));
             return "user/update";
         }
 

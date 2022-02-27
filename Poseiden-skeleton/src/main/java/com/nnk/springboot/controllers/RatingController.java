@@ -44,7 +44,7 @@ public class RatingController {
             model.addAttribute("ratings", ratingService.findAllRating());
             return "redirect:/rating/list";
         }
-
+        model.addAttribute("rating", rating);
         return "rating/add";
     }
 
@@ -61,6 +61,7 @@ public class RatingController {
                              BindingResult result, Model model) {
 
         if (result.hasErrors()){
+            model.addAttribute("rating", ratingService.getRatingById(id));
             return "rating/update";
         }
         ratingService.updateRating(rating, id);

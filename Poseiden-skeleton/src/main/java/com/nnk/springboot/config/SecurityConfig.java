@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.security.web.access.AccessDeniedHandler;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -37,7 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
-
+        CustomAuthenticationFilter customAuthenticationFilter= new CustomAuthenticationFilter(authenticationManagerBean());
 
         http.cors().and().csrf().disable();
         http.authorizeRequests()
@@ -48,20 +49,25 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/register/**").permitAll()
                 .antMatchers("/login/**").permitAll()
                 .antMatchers("/validate").permitAll()
-
+                .antMatchers("/Index").permitAll()
                 .antMatchers("/bidList/**", "/rating/**", "/ruleName/**", "/trade/**", "/curvePoint/**").hasAnyAuthority("ADMIN", "USER", "ROLE_USER")
                 .antMatchers("/user/**").hasAuthority("ADMIN").anyRequest().authenticated();
-        http.formLogin().defaultSuccessUrl("/bidList/list")
-                .and().oauth2Login().userInfoEndpoint().userService(customOAuthUserService).and()
-                .defaultSuccessUrl("/bidList/list").permitAll()
-                .failureUrl("/login?error=true");
+
+        http.formLogin()
+                .loginPage("/Index")
+                .loginProcessingUrl("/login")
+                .defaultSuccessUrl("/bidList/list")
+               .failureUrl("/login?error=true").and().rememberMe().tokenValiditySeconds(2592000).key("mySecret!").rememberMeParameter("checkRememberMe");
+              http.oauth2Login().userInfoEndpoint().userService(customOAuthUserService).and()
+             .defaultSuccessUrl("/bidList/list").permitAll()
+                      .failureUrl("/login?error=true");
 
         http.logout()
                 .deleteCookies("JSESSIONID").logoutUrl("/app-logout")
-                .logoutSuccessUrl("/login")
+                .logoutSuccessUrl("/Index")
                 .clearAuthentication(true)
                 .invalidateHttpSession(true);
-
+        http.addFilter(customAuthenticationFilter);
         http.exceptionHandling().accessDeniedHandler(accessDeniedHandler);
     }
 

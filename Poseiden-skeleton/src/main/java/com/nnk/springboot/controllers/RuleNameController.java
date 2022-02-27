@@ -43,6 +43,7 @@ public class RuleNameController {
             model.addAttribute("ruleNames", ruleNameService.findAllRule());
             return "redirect:/ruleName/list";
         }
+        model.addAttribute("ruleName", ruleName);
         return "ruleName/add";
     }
 
@@ -59,6 +60,7 @@ public class RuleNameController {
                              BindingResult result, Model model) {
 
         if (result.hasErrors()){
+            model.addAttribute("ruleName", ruleNameService.getRuleById(id));
             return "ruleName/update";
         }
         ruleNameService.updateRule(ruleName, id);

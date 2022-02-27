@@ -4,71 +4,345 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6a2dbb2-288c-4ef2-b01a-da3e9b686f34" name="Changes" comment="Final Refactoring">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e0cee15a-84ac-4c77-a45c-261fcc2ab164.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e0cee15a-84ac-4c77-a45c-261fcc2ab164.xml" afterDir="false" />
+    <list default="true" id="f6a2dbb2-288c-4ef2-b01a-da3e9b686f34" name="Changes" comment="New Refactoring">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_nimbusds_content_type_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_4_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_5_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_dom4j_dom4j_2_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_2_3_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_5_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_5_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_5_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_5_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_5_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_2_5_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_5_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_oauth2_core_5_5_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_oauth2_jose_5_5_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_5_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_3_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_3_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_3_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_3_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_3_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_3_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/config/CustomAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/static/img/github.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/static/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/Index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_10_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_12_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_10_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_12_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_10_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_12_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_10_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_12_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_10_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_12_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_10_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_12_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_199.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_200.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_5_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_nimbusds_nimbus_jose_jwt_7_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_nimbusds_nimbus_jose_jwt_9_10_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_nimbusds_oauth2_oidc_sdk_6_14.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_nimbusds_oauth2_oidc_sdk_9_9_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_jakarta_activation_1_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_jakarta_activation_1_2_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_12.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_jakarta_mail_1_6_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_jakarta_mail_1_6_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_15.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_22.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_22.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_2_4_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_4_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_12_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_14_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_12_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_14_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_27.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_53.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_27.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_53.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_27.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_53.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_13_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_19_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_dom4j_dom4j_2_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_2_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_0_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_2_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_6_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_32_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_17_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_2_0_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_24_0_GA.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_27_0_GA.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_5_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_1_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_2_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_7_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_7_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_vintage_junit_vintage_engine_5_5_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_9_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_3_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_3_9_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_3_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_42_2_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_42_2_23.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_20.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_28.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_32.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_28.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_32.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_5_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_5_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_5_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_5_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_5_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_2_0_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_5_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_5_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_2_0_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_2_0_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_2_0_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_2_0_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_2_0_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_2_2_0_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_5_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_5_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_5_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_5_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_5_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_5_5_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_5_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_oauth2_client_5_2_0_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_oauth2_core_5_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_oauth2_client_5_5_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_oauth2_jose_5_2_0_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_5_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_3_10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_2_0_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_2_0_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_2_0_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_2_0_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_3_10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_3_10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_2_0_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_3_10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_2_0_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_3_10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_2_0_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_2_0_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_12_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_12_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_6_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_8_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_28.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_02_2022_23_33__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_02_2022_23_33__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/spring-boot-skeleton.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/spring-boot-skeleton.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/config/MyAccessDeniedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/config/MyAccessDeniedHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/BidListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/BidListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/CurveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/CurveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/service/Impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/403.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/bidList/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/bidList/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/curvePoint/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/curvePoint/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/rating/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/rating/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/ruleName/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/ruleName/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/trade/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/trade/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/user/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/user/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/config/CustomOAuth2User.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/config/CustomOAuth2User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/config/CustomOAuthUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/config/CustomOAuthUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/config/MyAccessDeniedHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/config/MyAccessDeniedHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/config/PasswordEncoder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/config/PasswordEncoder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/RatingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/RatingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/RuleNameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/RuleNameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/TradeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/TradeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/service/Impl/BidServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/java/com/nnk/springboot/service/Impl/BidServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/bidList/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/bidList/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/error.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/config/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/BidListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/BidListController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/CurveController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/CurveController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/HomeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/RatingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/RatingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/RuleNameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/RuleNameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/TradeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/TradeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/domain/BidList.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/domain/BidList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/domain/CurvePoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/domain/CurvePoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/domain/Rating.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/domain/Rating.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/domain/Trade.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/domain/Trade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/BidListRequest$BidListRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/BidListRequest$BidListRequestBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/BidListRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/BidListRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/CurvePointRequest$CurvePointRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/CurvePointRequest$CurvePointRequestBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/CurvePointRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/CurvePointRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/GeneralConstraints.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/GeneralConstraints.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/RatingRequest$RatingRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/RatingRequest$RatingRequestBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/RatingRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/RatingRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/RuleRequest$RuleRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/RuleRequest$RuleRequestBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/RuleRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/RuleRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/TradeRequest$TradeRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/TradeRequest$TradeRequestBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/TradeRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/TradeRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/UserRequest$UserRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/UserRequest$UserRequestBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/UserRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/dto/UserRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/exception/DataNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/exception/DataNotFoundException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/exception/NotConformDataException.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/exception/NotConformDataException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/repositories/BidListRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/repositories/BidListRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/repositories/CurvePointRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/repositories/CurvePointRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/repositories/RatingRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/repositories/RatingRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/repositories/RuleNameRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/repositories/RuleNameRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/repositories/TradeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/repositories/TradeRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/repositories/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/service/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/service/Impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/403.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/bidList/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/bidList/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/curvePoint/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/curvePoint/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/rating/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/rating/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/ruleName/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/ruleName/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/trade/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/trade/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/user/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/user/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/test-classes/com/nnk/springboot/ControllerTest/BidListControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/test-classes/com/nnk/springboot/ControllerTest/BidListControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/test-classes/com/nnk/springboot/ControllerTest/CurveControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/test-classes/com/nnk/springboot/ControllerTest/CurveControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/test-classes/com/nnk/springboot/ControllerTest/RatingControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/test-classes/com/nnk/springboot/ControllerTest/RatingControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/test-classes/com/nnk/springboot/ControllerTest/RuleNameControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/test-classes/com/nnk/springboot/ControllerTest/RuleNameControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/test-classes/com/nnk/springboot/ControllerTest/TradeControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/test-classes/com/nnk/springboot/ControllerTest/TradeControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/test-classes/com/nnk/springboot/PasswordEncodeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/test-classes/com/nnk/springboot/PasswordEncodeTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/service/Impl/BidServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/com/nnk/springboot/service/Impl/BidServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/bidList/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/bidList/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/classes/templates/error.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/jacoco.exec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/css/maven-base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/css/maven-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/css/print.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/css/site.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/dependency-info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/dependency-management.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/images/close.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/images/collapsed.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/images/expanded.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/images/external.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/images/icon_error_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/images/icon_info_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/images/icon_success_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/images/icon_warning_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/images/logos/build-by-maven-black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/images/logos/build-by-maven-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/images/logos/maven-feather.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/images/newwindow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.config/CustomOAuth2User.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.config/CustomOAuth2User.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.config/CustomOAuthUserService.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.config/CustomOAuthUserService.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.config/MyAccessDeniedHandler.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.config/MyAccessDeniedHandler.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.config/PasswordEncoder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.config/PasswordEncoder.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.config/SecurityConfig.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.config/SecurityConfig.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.config/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.config/index.source.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.controllers/BidListController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.controllers/BidListController.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.controllers/CurveController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.controllers/CurveController.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.controllers/HomeController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.controllers/HomeController.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.controllers/LoginController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.controllers/LoginController.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.controllers/RatingController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.controllers/RatingController.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.controllers/RuleNameController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.controllers/RuleNameController.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.controllers/TradeController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.controllers/TradeController.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.controllers/UserController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.controllers/UserController.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.controllers/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.controllers/index.source.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.domain/BidList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.domain/BidList.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.domain/CurvePoint.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.domain/CurvePoint.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.domain/Rating.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.domain/Rating.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.domain/RuleName.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.domain/RuleName.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.domain/Trade.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.domain/Trade.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.domain/User.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.domain/User.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.domain/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.domain/index.source.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/BidListRequest$BidListRequestBuilder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/BidListRequest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/BidListRequest.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/CurvePointRequest$CurvePointRequestBuilder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/CurvePointRequest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/CurvePointRequest.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/GeneralConstraints.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/GeneralConstraints.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/RatingRequest$RatingRequestBuilder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/RatingRequest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/RatingRequest.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/RuleRequest$RuleRequestBuilder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/RuleRequest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/RuleRequest.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/TradeRequest$TradeRequestBuilder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/TradeRequest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/TradeRequest.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/UserRequest$UserRequestBuilder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/UserRequest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/UserRequest.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.dto/index.source.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.exception/DataNotFoundException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.exception/DataNotFoundException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.exception/NotConformDataException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.exception/NotConformDataException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.exception/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.exception/index.source.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.service.Impl/BidServiceImpl.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.service.Impl/BidServiceImpl.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.service.Impl/CurvePointServiceImpl.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.service.Impl/CurvePointServiceImpl.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.service.Impl/RatingServiceImpl.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.service.Impl/RatingServiceImpl.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.service.Impl/RuleNameServiceImpl.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.service.Impl/RuleNameServiceImpl.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.service.Impl/TradeServiceImpl.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.service.Impl/TradeServiceImpl.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.service.Impl/UserServiceImpl.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.service.Impl/UserServiceImpl.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.service.Impl/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot.service.Impl/index.source.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot/Application.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot/Application.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/com.nnk.springboot/index.source.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-resources/branchfc.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-resources/branchnc.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-resources/branchpc.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-resources/bundle.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-resources/class.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-resources/down.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-resources/greenbar.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-resources/group.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-resources/method.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-resources/package.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-resources/prettify.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-resources/prettify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-resources/redbar.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-resources/report.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-resources/report.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-resources/session.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-resources/sort.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-resources/sort.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-resources/source.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-resources/up.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco-sessions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/jacoco/jacoco.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/licenses.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/plugin-management.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/plugins.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/project-info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/scm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/site/team.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/TEST-com.nnk.springboot.ControllerTest.BidListControllerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/TEST-com.nnk.springboot.ControllerTest.CurveControllerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/TEST-com.nnk.springboot.ControllerTest.RatingControllerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/TEST-com.nnk.springboot.ControllerTest.RuleNameControllerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/TEST-com.nnk.springboot.ControllerTest.TradeControllerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/TEST-com.nnk.springboot.ControllerTest.UserControllerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/TEST-com.nnk.springboot.PasswordEncodeTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/TEST-com.nnk.springboot.ServiceTest.BidServiceTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/TEST-com.nnk.springboot.ServiceTest.CurvePointServiceTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/TEST-com.nnk.springboot.ServiceTest.RatingServiceTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/TEST-com.nnk.springboot.ServiceTest.RuleServiceTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/TEST-com.nnk.springboot.ServiceTest.TradeServiceTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/TEST-com.nnk.springboot.ServiceTest.UserServiceTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/com.nnk.springboot.ControllerTest.BidListControllerTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/com.nnk.springboot.ControllerTest.CurveControllerTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/com.nnk.springboot.ControllerTest.RatingControllerTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/com.nnk.springboot.ControllerTest.RuleNameControllerTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/com.nnk.springboot.ControllerTest.TradeControllerTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/com.nnk.springboot.ControllerTest.UserControllerTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/com.nnk.springboot.PasswordEncodeTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/com.nnk.springboot.ServiceTest.BidServiceTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/com.nnk.springboot.ServiceTest.CurvePointServiceTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/com.nnk.springboot.ServiceTest.RatingServiceTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/com.nnk.springboot.ServiceTest.RuleServiceTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/com.nnk.springboot.ServiceTest.TradeServiceTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poseiden-skeleton/target/surefire-reports/com.nnk.springboot.ServiceTest.UserServiceTest.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +361,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="7e7b538614ce21ba62cd34171f9e0c9d14dc32be" />
+        <entry key="$PROJECT_DIR$" value="77436ca11ce4a653197258bd8a4c29df61fc3463" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -138,7 +412,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Poseiden-skeleton/src/main/resources/static/img" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -154,10 +428,16 @@
       <recent name="com.nnk.springboot.dto" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Etternell\IdeaProjects\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\resources\static\img" />
+      <recent name="C:\Users\Etternell\IdeaProjects\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\resources\static\css\img" />
       <recent name="C:\Users\Etternell\IdeaProjects\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\domain" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Etternell\IdeaProjects\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\config" />
+      <recent name="C:\Users\Etternell\IdeaProjects\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\resources\static\img" />
+      <recent name="C:\Users\Etternell\IdeaProjects\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\resources\static\css" />
+      <recent name="C:\Users\Etternell\IdeaProjects\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\resources\static" />
+      <recent name="C:\Users\Etternell\IdeaProjects\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\resources\templates\user" />
+      <recent name="C:\Users\Etternell\IdeaProjects\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\resources\static\css\img" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -305,6 +585,9 @@
       <workItem from="1645650201628" duration="4953000" />
       <workItem from="1645655210549" duration="30000" />
       <workItem from="1645655531327" duration="3310000" />
+      <workItem from="1645812142280" duration="4626000" />
+      <workItem from="1645872361588" duration="3000" />
+      <workItem from="1645941177427" duration="8157000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit, Fix some ToDO's">
       <created>1642799705491</created>
