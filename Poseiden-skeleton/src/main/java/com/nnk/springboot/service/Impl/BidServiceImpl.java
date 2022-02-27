@@ -56,7 +56,7 @@ public class BidServiceImpl implements BidService {
 
         if (searchBidList.isPresent()) {
 
-
+            searchBidList.get().setBidListId(id);
             BidList updateBidList = searchBidList.get();
             String account = bidList.getAccount();
             if (account != null) {

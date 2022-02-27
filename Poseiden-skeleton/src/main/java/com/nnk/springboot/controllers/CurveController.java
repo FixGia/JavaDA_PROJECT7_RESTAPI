@@ -37,7 +37,7 @@ public class CurveController {
     }
 
     @PostMapping("/validate")
-    public String validate(@Valid @ModelAttribute CurvePointRequest curvePoint, BindingResult result, Model model) {
+    public String validate(@Valid @ModelAttribute("curvePoint") CurvePointRequest curvePoint, BindingResult result, Model model) {
 
         if (!result.hasErrors()) {
             curvePointService.saveCurvePoint(curvePoint);
@@ -58,12 +58,11 @@ public class CurveController {
     }
 
     @PostMapping("/update/{id}")
-    public String updateBid(@PathVariable("id") Integer id, @Valid CurvePointRequest curvePoint,
+    public String updateBid(@PathVariable("id") Integer id, @Valid @ModelAttribute("curvePoint") CurvePointRequest curvePoint,
                             BindingResult result, Model model) {
 
         if (result.hasErrors()) {
 
-            model.addAttribute("curvePoint", curvePointService.getCurvePointById(id));
             return "curvePoint/update";
         }
         curvePointService.updateCurvePoint(curvePoint, id);

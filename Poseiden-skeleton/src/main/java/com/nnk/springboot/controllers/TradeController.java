@@ -36,7 +36,7 @@ public class TradeController {
     }
 
     @PostMapping("/validate")
-    public String validate(@Valid @ModelAttribute TradeRequest trade, BindingResult result, Model model) {
+    public String validate(@Valid @ModelAttribute("trade") TradeRequest trade, BindingResult result, Model model) {
        if (!result.hasErrors()){
            tradeService.saveTrade(trade);
            model.addAttribute("trades", tradeService.findAllTrade());
@@ -56,12 +56,12 @@ public class TradeController {
     }
 
     @PostMapping("/update/{id}")
-    public String updateTrade(@PathVariable("id") Integer id, @Valid TradeRequest trade,
+    public String updateTrade(@PathVariable("id") Integer id, @Valid @ModelAttribute("trade") TradeRequest trade,
                              BindingResult result, Model model) {
 
         if (result.hasErrors()) {
-            model.addAttribute("trade", tradeService.getTradeById(id));
-            return "redirect:/trade/update";
+
+            return "trade/update";
         }
         tradeService.updateTrade(trade, id);
         model.addAttribute("trades", tradeService.findAllTrade());

@@ -18,7 +18,7 @@ import javax.validation.constraints.Pattern;
 @NoArgsConstructor
 public class BidListRequest {
 
-    private Integer id;
+    private Integer BidListId;
 
     @NotBlank(message = "Account is mandatory")
     @Length(max=GeneralConstraints.VARIABLE_LENGTH_30, message = "Max Length must be 30 characters")

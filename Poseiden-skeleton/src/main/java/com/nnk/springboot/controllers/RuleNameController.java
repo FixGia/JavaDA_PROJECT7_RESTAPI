@@ -36,7 +36,7 @@ public class RuleNameController {
     }
 
     @PostMapping("/validate")
-    public String validate(@Valid @ModelAttribute RuleRequest ruleName, BindingResult result, Model model) {
+    public String validate(@Valid @ModelAttribute("ruleName") RuleRequest ruleName, BindingResult result, Model model) {
 
         if (!result.hasErrors()){
             ruleNameService.saveRuleName(ruleName);
@@ -56,11 +56,10 @@ public class RuleNameController {
     }
 
     @PostMapping("/update/{id}")
-    public String updateRuleName(@PathVariable("id") Integer id, @Valid RuleRequest ruleName,
+    public String updateRuleName(@PathVariable("id") Integer id, @Valid @ModelAttribute("ruleName") RuleRequest ruleName,
                              BindingResult result, Model model) {
 
         if (result.hasErrors()){
-            model.addAttribute("ruleName", ruleNameService.getRuleById(id));
             return "ruleName/update";
         }
         ruleNameService.updateRule(ruleName, id);

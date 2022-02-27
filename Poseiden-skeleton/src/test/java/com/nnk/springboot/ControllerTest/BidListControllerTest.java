@@ -56,7 +56,7 @@ public class BidListControllerTest {
         bidListRequest.setBidQuantity(2.0);
         bidListRequest.setAccount("account2Test");
         bidListRequest.setType("type2Test");
-        bidListRequest.setId(1);
+        bidListRequest.setBidListId(1);
 
         mvc = MockMvcBuilders.webAppContextSetup(context).build();
         when(bidService.saveBid(bidListRequest)).thenReturn(bidList);

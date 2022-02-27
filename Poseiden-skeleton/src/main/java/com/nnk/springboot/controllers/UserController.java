@@ -58,11 +58,10 @@ public class UserController {
     }
 
     @PostMapping("/update/{id}")
-    public String updateUser(@PathVariable("id") Integer id, @Valid UserRequest user,
+    public String updateUser(@PathVariable("id") Integer id, @Valid @ModelAttribute("user") UserRequest user,
                              BindingResult result, Model model) {
 
         if (result.hasErrors()) {
-            model.addAttribute("user", userService.getUserById(id));
             return "user/update";
         }
 

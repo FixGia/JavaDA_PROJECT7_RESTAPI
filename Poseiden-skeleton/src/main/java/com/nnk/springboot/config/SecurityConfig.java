@@ -55,8 +55,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.formLogin()
                 .loginPage("/Index")
-                .loginProcessingUrl("/login")
-                .defaultSuccessUrl("/bidList/list")
+                .loginProcessingUrl("/perform_login").defaultSuccessUrl("/bidList/list", true).permitAll()
                .failureUrl("/login?error=true").and().rememberMe().tokenValiditySeconds(2592000).key("mySecret!").rememberMeParameter("checkRememberMe");
               http.oauth2Login().userInfoEndpoint().userService(customOAuthUserService).and()
              .defaultSuccessUrl("/bidList/list").permitAll()

@@ -37,7 +37,7 @@ public class RatingController {
     }
 
     @PostMapping("/validate")
-    public String validate(@Valid @ModelAttribute  RatingRequest rating, BindingResult result, Model model) {
+    public String validate(@Valid @ModelAttribute("rating")  RatingRequest rating, BindingResult result, Model model) {
 
         if (!result.hasErrors()){
             ratingService.saveRating(rating);
@@ -57,11 +57,10 @@ public class RatingController {
     }
 
     @PostMapping("/update/{id}")
-    public String updateRating(@PathVariable("id") Integer id, @Valid @ModelAttribute RatingRequest rating,
+    public String updateRating(@PathVariable("id") Integer id, @Valid @ModelAttribute("rating") RatingRequest rating,
                              BindingResult result, Model model) {
 
         if (result.hasErrors()){
-            model.addAttribute("rating", ratingService.getRatingById(id));
             return "rating/update";
         }
         ratingService.updateRating(rating, id);

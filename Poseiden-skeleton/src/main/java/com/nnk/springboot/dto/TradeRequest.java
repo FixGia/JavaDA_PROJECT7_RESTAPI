@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
 @NoArgsConstructor
 public class TradeRequest {
 
-    private Integer id;
+    private Integer TradeId;
 
     @NotBlank(message = "account is mandatory")
     @Length(max=GeneralConstraints.VARIABLE_LENGTH_30, message = "Max Length must be 30 characters")
