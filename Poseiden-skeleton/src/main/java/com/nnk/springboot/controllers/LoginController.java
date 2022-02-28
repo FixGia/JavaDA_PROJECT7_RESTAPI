@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @Log4j2
-@RequestMapping("app")
 public class LoginController {
 
 
@@ -33,41 +32,63 @@ public class LoginController {
         return mav;
     }
 
-    @GetMapping("error")
+
+  //  @PostMapping("/login")
+   // public String validateIndex(@Valid @ModelAttribute("login") LoginRequest login, Model model, BindingResult bindingResult) {
+
+     //   if (bindingResult.hasErrors()){
+
+       //     model.addAttribute("login", login);
+       //     return "/Index";
+       // }
+       // model.addAttribute("loginRequest", login.getUsername());
+       // return "bidList/list";
+   // }
+
+ //   @GetMapping(value = "/app-login")
+   // public String index(final LoginRequest loginRequest, Model model) {
+
+   //     model.addAttribute("login", loginRequest);
+     //   return "/Index";
+   // }
+
+    @GetMapping("/app/error")
     public ModelAndView error(
             @AuthenticationPrincipal final OAuth2User principal) {
 
-        ModelAndView mav = new ModelAndView();
+    ModelAndView mav = new ModelAndView();
 
-        String errorMessage = "You are not authorized"
-                + " for the requested data.";
+      String errorMessage = "You are not authorized"
+            + " for the requested data.";
 
-        mav.addObject("errorMsg", errorMessage);
+      mav.addObject("errorMsg", errorMessage);
 
-        if (principal != null) {
+     if (principal != null) {
 
-            mav.addObject("login", principal
-                    .getAttribute("login"));
-        }
+        mav.addObject("login", principal
+              .getAttribute("login"));
+   }
 
-        mav.setViewName("403");
+       mav.setViewName("403");
 
-        log.error("Login redirect 403 error");
+   log.error("Login redirect 403 error");
 
-        return mav;
-    }
-
+      return mav;
+   }
 
     @RequestMapping("/login?error")
-    public String loginError(final Model model) {
+    public ModelAndView loginError(final Model model) {
 
+        ModelAndView mav = new ModelAndView();
         log.error("invalid user login attempt");
 
         model.addAttribute("loginError", "invalid user credentials or session");
 
         log.trace("Display login view");
 
-        return "/Index";
+        mav.setViewName("login");
+
+        return mav;
     }
 
 }

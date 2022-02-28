@@ -1,13 +1,18 @@
 package com.nnk.springboot.controllers;
-
+import com.nnk.springboot.dto.LoginRequest;
+import com.nnk.springboot.dto.UserRequest;
 import lombok.AllArgsConstructor;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Controller
 @AllArgsConstructor
@@ -21,11 +26,7 @@ public class HomeController
 		return "home";
 	}
 
-	@GetMapping(value = "Index")
-	public String index() {
 
-		return "/Index";
-	}
 
 
 

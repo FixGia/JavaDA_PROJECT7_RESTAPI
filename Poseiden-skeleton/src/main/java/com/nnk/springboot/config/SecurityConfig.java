@@ -8,6 +8,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -38,7 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
-        CustomAuthenticationFilter customAuthenticationFilter= new CustomAuthenticationFilter(authenticationManagerBean());
+  //      CustomAuthenticationFilter customAuthenticationFilter= new CustomAuthenticationFilter(authenticationManagerBean());
 
         http.cors().and().csrf().disable();
         http.authorizeRequests()
@@ -54,19 +55,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/**").hasAuthority("ADMIN").anyRequest().authenticated();
 
         http.formLogin()
-                .loginPage("/Index")
-                .loginProcessingUrl("/perform_login").defaultSuccessUrl("/bidList/list", true).permitAll()
-               .failureUrl("/login?error=true").and().rememberMe().tokenValiditySeconds(2592000).key("mySecret!").rememberMeParameter("checkRememberMe");
-              http.oauth2Login().userInfoEndpoint().userService(customOAuthUserService).and()
+             //   .loginPage("/app-login")
+               // .loginProcessingUrl("/login")
+                .defaultSuccessUrl("/bidList/list", true).permitAll()
+               .failureUrl("/login?error").and().rememberMe().tokenValiditySeconds(2592000).key("mySecret!").rememberMeParameter("checkRememberMe");
+              http.oauth2Login()
+                      //.userInfoEndpoint().userService(customOAuthUserService).and()
              .defaultSuccessUrl("/bidList/list").permitAll()
-                      .failureUrl("/login?error=true");
+                      .failureUrl("/login?error");
 
         http.logout()
                 .deleteCookies("JSESSIONID").logoutUrl("/app-logout")
-                .logoutSuccessUrl("/Index")
+                .logoutSuccessUrl("/app-login")
                 .clearAuthentication(true)
                 .invalidateHttpSession(true);
-        http.addFilter(customAuthenticationFilter);
+      //  http.addFilter(customAuthenticationFilter);
         http.exceptionHandling().accessDeniedHandler(accessDeniedHandler);
     }
 
@@ -74,6 +77,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception{
         return super.authenticationManagerBean();
+    }
+
+    @Override
+    public void configure(
+            final WebSecurity web) throws Exception {
+   	web.ignoring().antMatchers( "/**/*.*" );
+        web.ignoring().antMatchers("/**/*.png", "/**/*.PNG",
+                "/**/*.GIF", "/**/*.gif", "/static/**",
+                "error.html", "/403.html", "/home.html",
+                "/login.html");
     }
 
 
