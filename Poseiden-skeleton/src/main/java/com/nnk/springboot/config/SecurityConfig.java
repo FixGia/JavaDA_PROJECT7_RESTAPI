@@ -39,11 +39,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
-  //      CustomAuthenticationFilter customAuthenticationFilter= new CustomAuthenticationFilter(authenticationManagerBean());
 
         http.cors().and().csrf().disable();
         http.authorizeRequests()
-
                 .antMatchers("/").permitAll()
                 .antMatchers("/css/**").permitAll()
                 .antMatchers("/img/**").permitAll()
@@ -55,21 +53,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/**").hasAuthority("ADMIN").anyRequest().authenticated();
 
         http.formLogin()
-             //   .loginPage("/app-login")
-               // .loginProcessingUrl("/login")
+
                 .defaultSuccessUrl("/bidList/list", true).permitAll()
                .failureUrl("/login?error").and().rememberMe().tokenValiditySeconds(2592000).key("mySecret!").rememberMeParameter("checkRememberMe");
-              http.oauth2Login()
-                      //.userInfoEndpoint().userService(customOAuthUserService).and()
+              http.oauth2Login().userInfoEndpoint().userService(customOAuthUserService).and()
              .defaultSuccessUrl("/bidList/list").permitAll()
                       .failureUrl("/login?error");
 
         http.logout()
                 .deleteCookies("JSESSIONID").logoutUrl("/app-logout")
-                .logoutSuccessUrl("/app-login")
+                .logoutSuccessUrl("/login")
                 .clearAuthentication(true)
                 .invalidateHttpSession(true);
-      //  http.addFilter(customAuthenticationFilter);
         http.exceptionHandling().accessDeniedHandler(accessDeniedHandler);
     }
 
